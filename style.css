@@ -1,0 +1,27 @@
+.carrousel {
+  position: absolute;
+  left: 25vw;
+  top: 25vh;
+  width: 50vw;
+  height: 50vh;
+  background: springgreen;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.carrousel--ouvrir {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.btn_x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2rem;
+  width: 2rem;
+}/*# sourceMappingURL=style.css.map */
