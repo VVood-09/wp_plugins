@@ -38,8 +38,12 @@ add_action('wp_enqueue_scripts', 'vdc_enqueue');
 function genere_boite() {
 
     $contenu = "
-    <button class='btn_modal'>Tu veux un modal?</button>
-    <div class ='carrousel'>Carrousel <button class='btn_x'>X</button></div>";
+                <button class='btn_modal'>Tu veux un modal?</button>
+                <div class ='carrousel'>Carrousel 
+                    <button class='btn_x'>X</button>
+                    <figure class='carrousel__figure'></figure>
+                    <form class='carrousel__form'></form>
+                </div>";
 
 
     return $contenu;
