@@ -1,5 +1,5 @@
 .carrousel {
-  position: absolute;
+  position: fixed;
   left: 25vw;
   top: 25vh;
   width: 50vw;
@@ -8,6 +8,7 @@
   transform: scale(0);
   opacity: 0;
   transition: transform 1s, opacity 1s;
+  z-index: 1;
 }
 
 .carrousel--ouvrir {
@@ -16,6 +17,7 @@
 }
 
 .btn_x {
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,4 +26,29 @@
   right: 0;
   height: 2rem;
   width: 2rem;
+}
+
+.carrousel__figure__img {
+  display: block;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.carrousel__figure__img--actif {
+  opacity: 1;
+}
+
+.carrousel__form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 1%;
 }/*# sourceMappingURL=style.css.map */

@@ -2,6 +2,10 @@
 
     /*****************************************************Les éléments du carrousel */
 
+    /**Initialisation du compteur */
+    let index = 0;
+    // let dernierIndex = -1;
+
     /**Conteneur du carrousel */
     let elBtnModal = document.querySelector(".btn_modal");
     /**Bouton temporaire pour l'ouverture */
@@ -22,15 +26,44 @@
     for (const elImg of elGalerieImg) {
 
         ajouter_img_carrousel(elImg);
-        // ajouter_radio_carrousel(elImg);
+        ajouter_radio_carrousel();
+        index++;
     }
 
+    /**
+     * Ajoute une image dans le carrousel
+     * @param {*} elImg Une image de la galerie
+     */
     function ajouter_img_carrousel(elImg){
         let elCarrouselFigureImg = document.createElement('img');
         elCarrouselFigureImg.setAttribute('src', elImg.src);
         elCarrouselFigureImg.classList.add('carrousel__figure__img');
+        elCarrouselFigureImg.dataset.index = index;
+        if(elCarrouselFigureImg.dataset.index == 0) {
+            elCarrouselFigureImg.classList.add('carrousel__figure__img--actif');
+        }
         elCarrouselFigure.appendChild(elCarrouselFigureImg);
-        console.log(elCarrouselFigureImg);
+        // console.log(elCarrouselFigureImg);
+    }
+
+    /**
+     * Ajoute un bouton radio dans le carrousel
+     */
+    function ajouter_radio_carrousel(){
+        let elCarrouselBtnRadio = document.createElement('input');
+        elCarrouselBtnRadio.type = "radio";
+        elCarrouselBtnRadio.name = "carrousel__form__radio";
+        elCarrouselBtnRadio.classList.add("carrousel__form__radio");
+        elCarrouselBtnRadio.dataset.index = index;
+        elCarrouselForm.appendChild(elCarrouselBtnRadio)
+        // console.log(elCarrouselBtnRadio);
+
+        /**Écouteur pour changer l'image dans le carrousel */
+        elCarrouselBtnRadio.addEventListener("click", function(){
+            console.log(this.dataset.index);
+            elCarrousel.querySelector(".carrousel__figure__img--actif").classList.remove("carrousel__figure__img--actif");
+            elCarrouselFigure.children[this.dataset.index].classList.add("carrousel__figure__img--actif")
+        })
     }
 
     /*****************************************************Ouverture du carrousel */
