@@ -5,8 +5,6 @@
     /**Initialisation du compteur */
     let index = 0;
 
-    /**Conteneur du carrousel */
-    let elBtnModal = document.querySelector(".btn_modal");
     /**Bouton temporaire pour l'ouverture */
     let elCarrousel = document.querySelector(".carrousel");
     /**Bouton pour la fermeture */
@@ -29,7 +27,7 @@
         index++;
         elImg.addEventListener("click", function(){
             elCarrousel.classList.add("carrousel--ouvrir");
-            
+
             changeClasseActive(this.dataset.index);
 
             elCarrouselForm.children[this.dataset.index].checked = true;
@@ -67,11 +65,6 @@
             changeClasseActive(this.dataset.index);
         })
     }
-
-    /*****************************************************Ouverture du carrousel */
-    elBtnModal.addEventListener("mousedown", function(){
-        elCarrousel.classList.add("carrousel--ouvrir")
-    });
 
     /*****************************************************Fermeture du carrousel */
     elBtnX.addEventListener("mousedown", function(){
