@@ -39,9 +39,9 @@
         elCarrouselFigureImg.setAttribute('src', elImg.src);
         elCarrouselFigureImg.classList.add('carrousel__figure__img');
         elCarrouselFigureImg.dataset.index = index;
-        if(elCarrouselFigureImg.dataset.index == 0) {
-            elCarrouselFigureImg.classList.add('carrousel__figure__img--actif');
-        }
+        // if(elCarrouselFigureImg.dataset.index == 0) {
+        //     elCarrouselFigureImg.classList.add('carrousel__figure__img--actif');
+        // }
         elCarrouselFigure.appendChild(elCarrouselFigureImg);
         // console.log(elCarrouselFigureImg);
     }
@@ -60,8 +60,11 @@
 
         /**Écouteur pour changer l'image dans le carrousel */
         elCarrouselBtnRadio.addEventListener("click", function(){
-            console.log(this.dataset.index);
-            elCarrousel.querySelector(".carrousel__figure__img--actif").classList.remove("carrousel__figure__img--actif");
+            // console.log(this.dataset.index);
+            // console.log(elCarrousel.querySelector(".carrousel__figure__img--actif"));
+            if(elCarrousel.querySelector(".carrousel__figure__img--actif") != null){
+                elCarrousel.querySelector(".carrousel__figure__img--actif").classList.remove("carrousel__figure__img--actif");
+            }
             elCarrouselFigure.children[this.dataset.index].classList.add("carrousel__figure__img--actif")
         })
     }
