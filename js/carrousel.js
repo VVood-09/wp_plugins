@@ -4,7 +4,6 @@
 
     /**Initialisation du compteur */
     let index = 0;
-    // let dernierIndex = -1;
 
     /**Conteneur du carrousel */
     let elBtnModal = document.querySelector(".btn_modal");
@@ -19,7 +18,6 @@
 
     /*****************************************************Les éléments de la galerie */
     /**Conteneur de la galerie */
-    let elGalerie = document.querySelector(".galerie");
     let elGalerieImg = document.querySelectorAll(".galerie figure img");
 
     /*****************************************************Étape 1: parcourir la galerie */
@@ -30,11 +28,10 @@
         elImg.dataset.index = index;
         index++;
         elImg.addEventListener("click", function(){
-            elCarrousel.classList.add("carrousel--ouvrir")
-            if(elCarrousel.querySelector(".carrousel__figure__img--actif") != null){
-                elCarrousel.querySelector(".carrousel__figure__img--actif").classList.remove("carrousel__figure__img--actif");
-            }
-            elCarrouselFigure.children[this.dataset.index].classList.add("carrousel__figure__img--actif");
+            elCarrousel.classList.add("carrousel--ouvrir");
+            
+            changeClasseActive(this.dataset.index);
+
             elCarrouselForm.children[this.dataset.index].checked = true;
         })
     }
@@ -52,7 +49,6 @@
             elCarrouselFigureImg.classList.add('carrousel__figure__img--actif');
         }
         elCarrouselFigure.appendChild(elCarrouselFigureImg);
-        // console.log(elCarrouselFigureImg);
     }
 
     /**
@@ -65,16 +61,10 @@
         elCarrouselBtnRadio.classList.add("carrousel__form__radio");
         elCarrouselBtnRadio.dataset.index = index;
         elCarrouselForm.appendChild(elCarrouselBtnRadio)
-        // console.log(elCarrouselBtnRadio);
 
         /**Écouteur pour changer l'image dans le carrousel */
         elCarrouselBtnRadio.addEventListener("click", function(){
-            // console.log(this.dataset.index);
-            // console.log(elCarrousel.querySelector(".carrousel__figure__img--actif"));
-            if(elCarrousel.querySelector(".carrousel__figure__img--actif") != null){
-                elCarrousel.querySelector(".carrousel__figure__img--actif").classList.remove("carrousel__figure__img--actif");
-            }
-            elCarrouselFigure.children[this.dataset.index].classList.add("carrousel__figure__img--actif")
+            changeClasseActive(this.dataset.index);
         })
     }
 
@@ -87,4 +77,12 @@
     elBtnX.addEventListener("mousedown", function(){
         elCarrousel.classList.remove("carrousel--ouvrir")
     });
+
+    /*****************************************************Change la classe active */
+    function changeClasseActive(index){
+        if(elCarrousel.querySelector(".carrousel__figure__img--actif") != null){
+            elCarrousel.querySelector(".carrousel__figure__img--actif").classList.remove("carrousel__figure__img--actif");
+        }
+        elCarrouselFigure.children[index].classList.add("carrousel__figure__img--actif");
+    }
 })()
