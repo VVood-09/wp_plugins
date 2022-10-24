@@ -27,6 +27,32 @@
     height: 2rem;
     width: 2rem;
 }
+.btn_droite, .btn_gauche{
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    font-weight: bolder;
+    transform: scaleY(6) scaleX(2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    height: 2rem;
+    width: 2rem;
+}
+
+.btn_droite {
+    right: 0;
+}
+
+.btn_gauche {
+    left: 0;
+}
+
+.btn_droite:hover, .btn_gauche:hover {
+    color: red;
+}
 
 // .carrousel__figure {
 //     // position: relative;
