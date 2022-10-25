@@ -85,7 +85,7 @@
             toActif = index -1;
         }
         changeClasseActive(toActif);
-        document.querySelector(`[class="carrousel__form__radio"][data-index="${toActif}"]`).checked = true;
+        elCarrouselForm.children[toActif].checked = true;
     })
     /*****************************************************Flèche de droite */
     elBtnDroite.addEventListener("click", function(){
@@ -97,7 +97,7 @@
             toActif = parseInt(index)  + 1;
         }
         changeClasseActive(toActif);
-        document.querySelector(`[class="carrousel__form__radio"][data-index="${toActif}"]`).checked = true;
+        elCarrouselForm.children[toActif].checked = true;
     })
 
     /*****************************************************Change la classe active */
