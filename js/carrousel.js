@@ -91,7 +91,7 @@
     elBtnDroite.addEventListener("click", function(){
         let index = elCarrousel.querySelector(".carrousel__figure__img--actif").dataset.index;
         let toActif;
-        if(index == 7) {
+        if(index == elGalerieImg.length -1) {
             toActif = 0;
         } else {
             toActif = parseInt(index)  + 1;
