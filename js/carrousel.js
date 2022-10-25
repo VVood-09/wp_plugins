@@ -78,28 +78,26 @@
     /*****************************************************Flèche de gauche */
     elBtnGauche.addEventListener("click", function(){
         let index = elCarrousel.querySelector(".carrousel__figure__img--actif").dataset.index;
-        elCarrousel.querySelector(".carrousel__figure__img--actif").classList.remove("carrousel__figure__img--actif");
         let toActif;
         if(index == 0) {
             toActif = elGalerieImg.length -1;
         } else {
             toActif = index -1;
         }
+        changeClasseActive(toActif);
         document.querySelector(`[class="carrousel__form__radio"][data-index="${toActif}"]`).checked = true;
-        elCarrouselFigure.children[toActif].classList.add("carrousel__figure__img--actif");
     })
     /*****************************************************Flèche de droite */
     elBtnDroite.addEventListener("click", function(){
         let index = elCarrousel.querySelector(".carrousel__figure__img--actif").dataset.index;
-        elCarrousel.querySelector(".carrousel__figure__img--actif").classList.remove("carrousel__figure__img--actif");
         let toActif;
         if(index == 7) {
             toActif = 0;
         } else {
             toActif = parseInt(index)  + 1;
         }
+        changeClasseActive(toActif);
         document.querySelector(`[class="carrousel__form__radio"][data-index="${toActif}"]`).checked = true;
-        elCarrouselFigure.children[toActif].classList.add("carrousel__figure__img--actif");
     })
 
     /*****************************************************Change la classe active */
