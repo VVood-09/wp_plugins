@@ -37,7 +37,7 @@ add_action('wp_enqueue_scripts', 'vdc_enqueue');
 
 function genere_boite() {
 
-    $contenu = "<div class ='carrousel'>Carrousel 
+    $contenu = "<div class ='carrousel'> 
                     <button class='btn_x'>X</button>
                     <button class='btn_droite'>➤</button>
                     <button class='btn_gauche'>➤</button>

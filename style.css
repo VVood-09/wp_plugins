@@ -4,7 +4,7 @@
   top: 25vh;
   width: 50vw;
   height: 50vh;
-  background: black;
+  background: rgb(26, 26, 26);
   transform: scale(0);
   opacity: 0;
   transition: transform 1s, opacity 1s;
@@ -35,7 +35,7 @@
 .btn_droite, .btn_gauche {
   z-index: 1;
   background-color: transparent;
-  color: transparent;
+  color: white;
   border: none;
   border-radius: 0;
   font-weight: bolder;
