@@ -39,8 +39,8 @@ function genere_boite() {
 
     $contenu = "<div class ='carrousel'>Carrousel 
                     <button class='btn_x'>X</button>
-                    <button class='btn_droite'>></button>
-                    <button class='btn_gauche'><</button>
+                    <button class='btn_droite'>➤</button>
+                    <button class='btn_gauche'>➤</button>
                     <figure class='carrousel__figure'></figure>
                     <form class='carrousel__form'></form>
                 </div>";

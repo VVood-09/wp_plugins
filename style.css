@@ -4,7 +4,7 @@
   top: 25vh;
   width: 50vw;
   height: 50vh;
-  background: transparent;
+  background: black;
   transform: scale(0);
   opacity: 0;
   transition: transform 1s, opacity 1s;
@@ -17,30 +17,35 @@
 }
 
 .btn_x {
-  z-index: 1;
-  display: flex;
-  align-items: center;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background-color: red;
   justify-content: center;
+  display: flex;
   position: absolute;
+  font-size: 20px;
   top: 0;
   right: 0;
-  height: 2rem;
-  width: 2rem;
+  padding: 10px;
+  width: 40px;
 }
 
 .btn_droite, .btn_gauche {
   z-index: 1;
   background-color: transparent;
+  color: transparent;
   border: none;
+  border-radius: 0;
   font-weight: bolder;
-  transform: scaleY(6) scaleX(2);
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 50%;
-  height: 2rem;
-  width: 2rem;
+  top: 0;
+  height: 100%;
+  width: 40px;
 }
 
 .btn_droite {
@@ -49,10 +54,12 @@
 
 .btn_gauche {
   left: 0;
+  rotate: 180deg;
 }
 
 .btn_droite:hover, .btn_gauche:hover {
-  color: red;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .carrousel__figure__img {
@@ -60,8 +67,10 @@
   position: absolute;
   object-fit: cover;
   top: 0;
+  right: 0;
   left: 0;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   height: 100%;
   opacity: 0;
 }
@@ -72,10 +81,25 @@
 
 .carrousel__form {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   width: 100%;
   z-index: 3;
   display: flex;
   justify-content: center;
   gap: 1%;
+}
+
+.carrousel__form input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px black solid;
+  transition: 0.2s all linear;
+  position: relative;
+}
+
+.carrousel__form input:checked {
+  border: 8px solid red;
 }/*# sourceMappingURL=style.css.map */
