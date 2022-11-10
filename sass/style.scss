@@ -61,9 +61,13 @@
     background-color: rgba($color: #fff, $alpha: 0.25);
 }
 
-// .carrousel__figure {
-//     // position: relative;
-// }
+.carrousel__figure {
+    position: absolute;
+    margin: 0;
+    border: 40px transparent solid;
+    height: 100%;
+    width: 100%;
+}
 
 .carrousel__figure__img {
     display: block;
